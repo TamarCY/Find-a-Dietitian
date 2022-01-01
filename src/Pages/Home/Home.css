@@ -1,0 +1,32 @@
+/* TODO: add to main css */
+
+:root{
+   --background: #fcffde;
+}
+
+
+body{
+    background-color: var(--background);
+}
+
+
+.Home-container {
+    height: 100vh;
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.Home-button {
+    width: 60%;
+    height: 10%;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
+/* TODO: add hover effect */
