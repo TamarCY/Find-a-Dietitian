@@ -21,8 +21,10 @@ export default function Form() {
 // })
 const [name, setName] = useState("");
 const [phone, setPhone] = useState("");
-
 const [dietExpertise, setDietExpertise] = useState([]);
+const [language, setLanguage] = useState([]);
+const [hmo, setHmo] = useState("");
+
 
 const handleExpertiseChange = (event) => {
   const {
@@ -36,15 +38,24 @@ const handleExpertiseChange = (event) => {
 
 const handleNameInput = (e)=>{
   setName(e.target.value);
-}
+};
 
 const handlePhoneInput = (e)=>{
   setPhone(e.target.value);
-}
+};
+
+const handleLanguagesChange = (e) => {
+  setLanguage(e.target.value);
+};
+
+
+// const handleClinicSelect = (e) =>{
+//   setClinic(e.target.value);
+// }
 
 const submitForm = () => {
   console.log(
-    dietExpertise
+    language
   );
 }
 
@@ -85,7 +96,8 @@ const submitForm = () => {
         handleExpertiseChange={handleExpertiseChange}
         />
         <LanguageSelect
-          
+          language={language}
+          handleLanguagesChange={handleLanguagesChange}
         />
         <ClinicSelect/>
 

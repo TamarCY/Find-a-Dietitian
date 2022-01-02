@@ -29,18 +29,18 @@ const languages = [
   'גרמנית',
 ];
 
-export default function LanguageSelect() {
-  const [language, setLanguage] = React.useState([]);
+export default function LanguageSelect(props) {
+//   const [language, setLanguage] = React.useState([]);
 
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setLanguage(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
-  };
+//   const handleChange = (event) => {
+//     const {
+//       target: { value },
+//     } = event;
+//     setLanguage(
+//       // On autofill we get a stringified value.
+//       typeof value === 'string' ? value.split(',') : value,
+//     );
+//   };
 
   return (
     <div>
@@ -50,15 +50,15 @@ export default function LanguageSelect() {
           labelId="demo-multiple-checkbox-label"
           id="demo-multiple-checkbox"
           multiple
-          value={language}
-          onChange={handleChange}
+          value={props.language}
+          onChange={props.handleLanguagesChange}
           input={<OutlinedInput label="Tag" />}
           renderValue={(selected) => selected.join(', ')}
           MenuProps={MenuProps}
         >
           {languages.map((item) => (
             <MenuItem key={item} value={item}>
-              <Checkbox checked={language.indexOf(item) > -1} />
+              <Checkbox checked={props.language.indexOf(item) > -1} />
               <ListItemText primary={item} />
             </MenuItem>
           ))}
