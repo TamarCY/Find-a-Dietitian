@@ -1,13 +1,24 @@
 import React from "react";
-import "./Home.css"
+
+import "./Home.css";
+import logo from "../../Assets/Images/logo.png"
+import { Link } from "react-router-dom";
 
 
-const  Home = () =>{
+const Home = () => {
     return (
         <div className="Home-container">
-            <button className="Home-button">חיפוש</button>
-            <button className="Home-button">הוספה</button>
-            <button className="Home-button">עריכה</button>  
+            <img className="Home-logo" src={logo} alt="logo" />
+            <Link className="Home-button" to="/search"> 
+               חיפוש
+            </Link>
+            <Link className="Home-button" to="/add"> 
+               הוספה
+            </Link>
+            <Link className="Home-button" to="/toEdit"> 
+               עריכה
+            </Link>
+            
         </div>
     )
 }
