@@ -10,8 +10,10 @@
 body {
   /* background-color: var(--background); */
   font-family: 'Varela Round', sans-serif;
+}
 
-
+a {
+    text-decoration: none;
 }
 
 .Home-container {

@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const baseURL =  axios.create({
-    baseURL: "https://61c5b49ac003e70017b7987a.mockapi.io/shoes/"
+    baseURL: "https://61c70adc90318500175472d3.mockapi.io/dietitian"
 })
 
 

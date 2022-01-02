@@ -7,6 +7,20 @@ import Select from '@mui/material/Select';
 import { TextField } from '@mui/material';
 
 export default function ClinicSelect(props) {
+    const renderCityInput = () => {
+        if (props.displayCity) {
+            return (
+            <FormControl sx={{ m: 1, minWidth: 120 }}>
+                <TextField
+                    id="city"
+                    label="עיר"
+                    value={props.city}
+                    onChange={props.handleCityChange}
+                />
+            </FormControl>
+        )}
+    }
+
     return (
         <Box>
             <div>
@@ -19,36 +33,31 @@ export default function ClinicSelect(props) {
                         value={props.hmo}
                         onChange={props.handleHmoChange}
                     >
-                        <MenuItem value={1}>מכבי</MenuItem>
-                        <MenuItem value={2}>כללית</MenuItem>
-                        <MenuItem value={3}>מאוחדת</MenuItem>
-                        <MenuItem value={4}>לאומית</MenuItem>
-                        <MenuItem value={5}>פרטי</MenuItem>
+                        <MenuItem value={"מכבי"}>מכבי</MenuItem>
+                        <MenuItem value={"כללית"}>כללית</MenuItem>
+                        <MenuItem value={"מאוחדת"}>מאוחדת</MenuItem>
+                        <MenuItem value={"לאומית"}>לאומית</MenuItem>
+                        <MenuItem value={"פרטי"}>פרטי</MenuItem>
                     </Select>
                 </FormControl>
                 <FormControl sx={{ m: 1, minWidth: 120 }}>
                     <InputLabel htmlFor="area">אזור</InputLabel>
                     <Select defaultValue=""
-                     id="area" 
-                     label="area" 
-                     value={props.area}
-                     onChange={props.handleAreaChange}
+                        id="area"
+                        label="area"
+                        value={props.area}
+                        onChange={props.handleAreaChange}
                     >
-                        <MenuItem value={1}>מרכז</MenuItem>
-                        <MenuItem value={2}>צפון</MenuItem>
-                        <MenuItem value={3}>דרום</MenuItem>
-                        <MenuItem value={4}>ירושלים</MenuItem>
-                        <MenuItem value={4}>שפלה</MenuItem>
+                        <MenuItem value={"מרכז"}>מרכז</MenuItem>
+                        <MenuItem value={"צפון"}>צפון</MenuItem>
+                        <MenuItem value={"דרום"}>דרום</MenuItem>
+                        <MenuItem value={"ירושלים"}>ירושלים</MenuItem>
+                        <MenuItem value={"שפלה"}>שפלה</MenuItem>
                     </Select>
                 </FormControl>
-                <FormControl sx={{ m: 1, minWidth: 120 }}>
-                    <TextField
-                        id="city"
-                        label="עיר" 
-                        value={props.city}
-                        onChange={props.handleCityChange}
-                        />
-                </FormControl>
+            { renderCityInput()}
+
+
             </div>
         </Box>
     );

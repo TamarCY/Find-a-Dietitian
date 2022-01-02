@@ -2,15 +2,14 @@ import * as React from 'react';
 import { useState } from 'react';
 import {Link} from 'react-router-dom'
 import Box from '@mui/material/Box';
-import { Button } from '@mui/material';
+import { Button, Container } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import MultipleSelectChip from '../MultipleSelectCheckmarks/MultipleSelectChip';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import ClinicSelect from '../ClinicSelect/ClinicSelect';
 import logo from '../../Assets/Images/logo.png';
 import './Form.css';
-import reactDom from 'react-dom';
-
+import api from '../../api'
 
 // const DIETITIAN_OBJECT = {
 //   id:"", name:"", phone:"", portefolio:"", expertice:[], languges:[], clinics:[{hmo:"", area:"",city:""}]
@@ -67,27 +66,26 @@ const handleCityChange = (e) => {
 }
 
 const submitForm = () => {
-  setDietitian(
-    {
+  try {
+  api.postItem({
       "name": name,
       "phone": phone,
       "language": language,
+      "dietExpertise":dietExpertise,
       "hmo": hmo,
       "area": area,
       "city": city
     }
   )
-  
-  
+  } catch(err){
+    console.error(err);
+  }
+
 }
-
-
-
-
-
+// TODO: CHECK IF IT POSTS
 
   return (
-    <>
+    <Container>
     <img className="Form-logo" src={logo} alt="logo"/>
     <Box
       component="form"
@@ -97,7 +95,6 @@ const submitForm = () => {
       noValidate
       autoComplete="off"
     >
-        <div>
         <TextField
           id="name"
           label="שם"
@@ -127,17 +124,17 @@ const submitForm = () => {
           hmo={hmo}
           area={area}
           city={city}
+          displayCity={true}
           handleHmoChange={handleHmoChange}
           handleAreaChange={handleAreaChange}
           handleCityChange={handleCityChange}
         />
 
 
-      </div>
     </Box>
     <Link to="/">
     <Button variant="contained" color='success' onClick={submitForm}>שמירה</Button>
-</Link>
-    </>
+    </Link>
+</Container>
   );
 }
