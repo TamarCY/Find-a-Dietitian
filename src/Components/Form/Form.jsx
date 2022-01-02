@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
+import {Link} from 'react-router-dom'
 import Box from '@mui/material/Box';
 import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
@@ -8,6 +9,7 @@ import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import ClinicSelect from '../ClinicSelect/ClinicSelect';
 import logo from '../../Assets/Images/logo.png';
 import './Form.css';
+import reactDom from 'react-dom';
 
 
 // const DIETITIAN_OBJECT = {
@@ -24,7 +26,10 @@ const [phone, setPhone] = useState("");
 const [dietExpertise, setDietExpertise] = useState([]);
 const [language, setLanguage] = useState([]);
 const [hmo, setHmo] = useState("");
-
+const [area, setArea] = useState("");
+const [city, setCity] = useState("");
+const [dietitian, setDietitian] = useState({})
+// TODO: change to one state object and one function for all
 
 const handleExpertiseChange = (event) => {
   const {
@@ -49,15 +54,34 @@ const handleLanguagesChange = (e) => {
 };
 
 
-// const handleClinicSelect = (e) =>{
-//   setClinic(e.target.value);
-// }
+const handleAreaChange = (e) => {
+  setArea(e.target.value)
+}
+
+const handleHmoChange = (e) => {
+  setHmo(e.target.value)
+}
+
+const handleCityChange = (e) => {
+  setCity(e.target.value)
+}
 
 const submitForm = () => {
-  console.log(
-    language
-  );
+  setDietitian(
+    {
+      "name": name,
+      "phone": phone,
+      "language": language,
+      "hmo": hmo,
+      "area": area,
+      "city": city
+    }
+  )
+  
+  
 }
+
+
 
 
 
@@ -88,7 +112,7 @@ const submitForm = () => {
           pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
           // TODO: fix the tel input type
           value={phone}
-          noChange={handlePhoneInput}
+          onChange={handlePhoneInput}
         />
       
         <MultipleSelectChip 
@@ -99,13 +123,21 @@ const submitForm = () => {
           language={language}
           handleLanguagesChange={handleLanguagesChange}
         />
-        <ClinicSelect/>
+        <ClinicSelect
+          hmo={hmo}
+          area={area}
+          city={city}
+          handleHmoChange={handleHmoChange}
+          handleAreaChange={handleAreaChange}
+          handleCityChange={handleCityChange}
+        />
 
 
       </div>
     </Box>
+    <Link to="/">
     <Button variant="contained" color='success' onClick={submitForm}>שמירה</Button>
-
+</Link>
     </>
   );
 }

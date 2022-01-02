@@ -16,8 +16,9 @@ export default function ClinicSelect(props) {
                         defaultValue=""
                         id="hmo"
                         label="hmo"
-                        value={}
-                        >
+                        value={props.hmo}
+                        onChange={props.handleHmoChange}
+                    >
                         <MenuItem value={1}>מכבי</MenuItem>
                         <MenuItem value={2}>כללית</MenuItem>
                         <MenuItem value={3}>מאוחדת</MenuItem>
@@ -27,7 +28,12 @@ export default function ClinicSelect(props) {
                 </FormControl>
                 <FormControl sx={{ m: 1, minWidth: 120 }}>
                     <InputLabel htmlFor="area">אזור</InputLabel>
-                    <Select defaultValue="" id="area" label="area">
+                    <Select defaultValue=""
+                     id="area" 
+                     label="area" 
+                     value={props.area}
+                     onChange={props.handleAreaChange}
+                    >
                         <MenuItem value={1}>מרכז</MenuItem>
                         <MenuItem value={2}>צפון</MenuItem>
                         <MenuItem value={3}>דרום</MenuItem>
@@ -38,7 +44,10 @@ export default function ClinicSelect(props) {
                 <FormControl sx={{ m: 1, minWidth: 120 }}>
                     <TextField
                         id="city"
-                        label="עיר" />
+                        label="עיר" 
+                        value={props.city}
+                        onChange={props.handleCityChange}
+                        />
                 </FormControl>
             </div>
         </Box>
