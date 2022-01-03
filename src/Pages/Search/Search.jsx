@@ -7,12 +7,11 @@ import ClinicSelect from "../../Components/ClinicSelect/ClinicSelect";
 import { useState } from "react";
 import { Button } from "@mui/material";
 
-const Search = ({ data }) => {
+const Search = (props) => {
     const [dietExpertise, setDietExpertise] = useState([]);
     const [language, setLanguage] = useState([]);
     const [hmo, setHmo] = useState("");
     const [area, setArea] = useState("");
-    const [dietitian, setDietitian] = useState({})
     // TODO: change to one state object? and one function for all
 
     const handleExpertiseChange = (e) => {
@@ -33,24 +32,6 @@ const Search = ({ data }) => {
     }
 
 
-    const checkExpertise = (item, dataArray) => {
-        return item.every((element) => dataArray.includes(element))
-    }
-
-    const checkLanguage = (item, dataArray) => {
-        return item.some((element)=>dataArray.includes(element))
-    }
-
-    const filterDietitians = () => {
-        const result = data.filter((item) => { return(
-            checkExpertise(dietExpertise ,item.dietExpertise) &&
-            checkLanguage(language, item.language) &&
-            hmo === item.hmo &&
-            area === item.area)
-        })
-        console.log(result);
-    }
-
     return (
         <div className="Search-container">
             <img className="Search-logo" src={logo} alt="logo" />
@@ -68,7 +49,7 @@ const Search = ({ data }) => {
                 handleHmoChange={handleHmoChange}
                 handleAreaChange={handleAreaChange}
             />
-            <Button variant="contained" color='success' onClick={filterDietitians}>חיפוש</Button>
+            <Button variant="contained" color='success' onClick={()=>props.filterDietitians(props.data ,dietExpertise, language, hmo, area)}>חיפוש</Button>
         </div>
     )
 }

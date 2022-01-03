@@ -14,6 +14,8 @@ const theme = createTheme({
 
 function App() {
   const [data, setData] = useState({})
+  const [searchResults, setSearchResults] = useState({})
+
   useEffect(()=>{
     const getData = async () => {
       const response = await api.getItems();
@@ -22,6 +24,31 @@ function App() {
     }
     getData()
   },[])
+
+
+
+  const checkExpertise = (item, dataArray) => {
+    return item.every((element) => dataArray.includes(element))
+}
+
+const checkLanguage = (item, dataArray) => {
+    return item.some((element)=>dataArray.includes(element))
+}
+
+const filterDietitians = (data, dietExpertise, language, hmo, area) => {
+    const result = data.filter((item) => { return(
+        checkExpertise(dietExpertise ,item.dietExpertise) &&
+        checkLanguage(language, item.language) &&
+        hmo === item.hmo &&
+        area === item.area)
+        // TODO: deal with unselected categories 
+    })
+    if (result.length === 0) {
+      console.log("no matches found");
+    }
+    console.log(result);
+    setSearchResults(result)
+}
   
 
   return (
@@ -30,7 +57,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/search" element={<Search data={data}/>} />
+          <Route path="/search" element={<Search data={data} filterDietitians={filterDietitians}/>} />
           <Route path="/add" element={<Add/>} />
           <Route path="/edit" element={<Add />} />
           <Route path="/toEdit" element={<SearchToEdit/>} />
