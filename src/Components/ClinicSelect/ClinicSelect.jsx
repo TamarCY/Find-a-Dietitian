@@ -14,7 +14,7 @@ export default function ClinicSelect(props) {
                 <TextField
                     id="city"
                     label="עיר"
-                    value={props.city}
+                    defaultValue={props.city}
                     onChange={props.handleCityChange}
                 />
             </FormControl>
@@ -27,7 +27,7 @@ export default function ClinicSelect(props) {
                 <FormControl sx={{ m: 1, minWidth: 120 }}>
                     <InputLabel htmlFor="hmo">קופה</InputLabel>
                     <Select
-                        defaultValue={props.hmo}
+                        defaultValue=""
                         id="hmo"
                         label="hmo"
                         value={props.hmo}
@@ -42,7 +42,7 @@ export default function ClinicSelect(props) {
                 </FormControl>
                 <FormControl sx={{ m: 1, minWidth: 120 }}>
                     <InputLabel htmlFor="area">אזור</InputLabel>
-                    <Select defaultValue="props.area"
+                    <Select defaultValue=""
                         id="area"
                         label="area"
                         value={props.area}

@@ -17,10 +17,10 @@ import api from '../../api'
 // TODO: what is the best place for this?
 
 
-export default function Form({temp}) {
+export default function Form() {
 //   const {formData, setFormData} = useState( {id:"", name:"", phone:"", portefolio:"", expertice:[], languges:[], clinics:[{hmo:"", area:"",city:""}]
 // })
-const [name, setName] = useState(temp);
+const [name, setName] = useState("");
 const [phone, setPhone] = useState("");
 const [dietExpertise, setDietExpertise] = useState([]);
 const [language, setLanguage] = useState([]);
@@ -98,7 +98,7 @@ const submitForm = () => {
         <TextField
           id="name"
           label="שם"
-          defaultValue={name}
+          value={name}
           onChange={handleNameInput}
           
         />
@@ -108,7 +108,7 @@ const submitForm = () => {
           label="טלפון"
           pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
           // TODO: fix the tel input type
-          defaultValue={phone}
+          value={phone}
           onChange={handlePhoneInput}
         />
       
