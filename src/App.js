@@ -7,6 +7,7 @@ import Results from "./Pages/Results/Results"
 import SearchToEdit from "./Pages/SearchToEdit/SearchToEdit"
 import api from "./api"
 import {ThemeProvider, createTheme} from "@mui/material"
+import DietitianCard from "./Components/DietitianCard/DietitianCard";
 
 const theme = createTheme({
   direction: 'rtl',
@@ -60,10 +61,10 @@ const filterDietitians = (data, dietExpertise, language, hmo, area) => {
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search data={data} filterDietitians={filterDietitians}/>} />
           <Route path="/add" element={<Add/>} />
-          <Route path="/edit" element={<Add />} />
-          <Route path="/toEdit" element={<SearchToEdit/>} />
+          <Route path="/edit/:id" element={<Add edit={true}/>} />
+          <Route path="/toEdit" element={<SearchToEdit data={data}/>} />
           <Route path="/results" element={<Results searchResults={searchResults}/>} />
-          <Route path="/results/:id" element={<Search/>} />
+          <Route path="/results/:id" element={<DietitianCard/>} />
         </Routes>
       </BrowserRouter>
     </div>

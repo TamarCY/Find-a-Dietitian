@@ -27,7 +27,7 @@ export default function ClinicSelect(props) {
                 <FormControl sx={{ m: 1, minWidth: 120 }}>
                     <InputLabel htmlFor="hmo">קופה</InputLabel>
                     <Select
-                        defaultValue=""
+                        defaultValue={props.hmo}
                         id="hmo"
                         label="hmo"
                         value={props.hmo}
@@ -42,7 +42,7 @@ export default function ClinicSelect(props) {
                 </FormControl>
                 <FormControl sx={{ m: 1, minWidth: 120 }}>
                     <InputLabel htmlFor="area">אזור</InputLabel>
-                    <Select defaultValue=""
+                    <Select defaultValue="props.area"
                         id="area"
                         label="area"
                         value={props.area}
