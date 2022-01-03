@@ -5,19 +5,22 @@ import InputSearch from "../../Components/InputSearch/InputSearch";
 import DietitianCard from "../../Components/DietitianCard/DietitianCard";
 import { Link } from "react-router-dom";
 
-const  SearchToEdit = ({data}) =>{
+const SearchToEdit = ({ data }) => {
     const [input, setInput] = useState("");
-    const [results, setResults] = useState ([]);
-    
+    const [results, setResults] = useState([]);
+
     const renderCards = () => {
-        if(results.length>0){
-        return results.map((item)=> {return (<Link to={`/edit/${item.id}`} key={item.id}><DietitianCard data={item} /></Link>)})
+        if (results.length > 0) {
+            return results.map((item) => {
+                return (<Link to={`/edit/${item.id}`} key={item.id}><DietitianCard
+                    data={item} isEditMode={true} /></Link>)
+            })
         }
     }
 
-        const handleSearch = () => {
+    const handleSearch = () => {
         console.log(input);
-       const filteredData = data.filter((item)=>{return item.name.includes(input)})
+        const filteredData = data.filter((item) => { return item.name.includes(input) })
         setResults(filteredData);
     }
 
@@ -25,14 +28,14 @@ const  SearchToEdit = ({data}) =>{
         setInput(e.target.value)
     }
 
-    
+
 
     return (
         <div className="SearchToEdit-container">
-           <InputSearch handleSearch={handleSearch} handleChange={handleChange} 
-           input={input}
-           />
-           {renderCards()}
+            <InputSearch handleSearch={handleSearch} handleChange={handleChange}
+                input={input}
+            />
+            {renderCards()}
         </div>
     )
 }

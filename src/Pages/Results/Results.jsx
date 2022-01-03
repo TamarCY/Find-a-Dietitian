@@ -19,7 +19,7 @@ const  Results = ({searchResults}) =>{
             </div>
     }
     const renderCards = () => {
-        return searchResults.map((item)=> {return (<div key={item.id} ><DietitianCard data={item} /></div>)})
+        return searchResults.map((item)=> {return (<div key={item.id} ><DietitianCard data={item} isEditMode={false}/></div>)})
     }
 
     if(!searchResults) return <div></div>;

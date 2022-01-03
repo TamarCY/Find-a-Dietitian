@@ -11,15 +11,10 @@ import logo from '../../Assets/Images/logo.png';
 import './Form.css';
 import api from '../../api'
 
-// const DIETITIAN_OBJECT = {
-//   id:"", name:"", phone:"", portefolio:"", expertice:[], languges:[], clinics:[{hmo:"", area:"",city:""}]
-// }
-// TODO: what is the best place for this?
 
 
 export default function Form() {
-//   const {formData, setFormData} = useState( {id:"", name:"", phone:"", portefolio:"", expertice:[], languges:[], clinics:[{hmo:"", area:"",city:""}]
-// })
+
 const [name, setName] = useState("");
 const [phone, setPhone] = useState("");
 const [dietExpertise, setDietExpertise] = useState([]);

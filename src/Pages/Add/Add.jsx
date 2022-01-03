@@ -6,7 +6,7 @@ import Form from "../../Components/Form/Form";
 
 
 
-const  Add = ({isEditMode}) =>{
+const  Add = () =>{
     
 
     return (
