@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 
 
-const SearchToEdit = ({ data, handleDelete }) => {
+const SearchToEdit = ({ data, handleDelete, handleEdit}) => {
     const [input, setInput] = useState("");
     const [results, setResults] = useState([]);
 
@@ -21,7 +21,7 @@ const SearchToEdit = ({ data, handleDelete }) => {
             return results.map((item) => {
                 return (<div  key={item.id}><DietitianCard
                     data={item} isEditMode={true} 
-                    handleDelete={handleDelete}/></div>)
+                    handleDelete={handleDelete} handleEdit={handleEdit}/></div>)
             })
         }
     }

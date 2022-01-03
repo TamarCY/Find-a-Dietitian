@@ -17,6 +17,7 @@ const theme = createTheme({
 function App() {
   const [data, setData] = useState({})
   const [searchResults, setSearchResults] = useState({})
+  const [itemToEdit, setItemToEdit] = useState()
 
 
 const getData = async () => {
@@ -69,6 +70,30 @@ const handleDelete = async (id) => {
   }
 
 }
+const handleEdit = (element) => {
+  setItemToEdit(element);
+}
+
+const submitEdit = async (id,name, phone, language, dietExpertise, hmo, area, city) => {
+   try {
+    const response = await api.putItem(id,{
+      "name": name,
+      "phone": phone,
+      "language": language,
+      "dietExpertise":dietExpertise,
+      "hmo": hmo,
+      "area": area,
+      "city": city
+    }
+  )
+  getData()
+  } catch(err){
+    console.error(err);
+  }
+
+}
+
+
   
 const submitForm = async (name, phone, language, dietExpertise, hmo, area, city) => {
   try {
@@ -97,10 +122,10 @@ const submitForm = async (name, phone, language, dietExpertise, hmo, area, city)
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search data={data} filterDietitians={filterDietitians}/>} />
           <Route path="/add" element={<Add submitForm={submitForm}/>} />
-          {/* <Route path="/edit" element={<Edit/>} /> */}
-          <Route path="/toEdit" element={<SearchToEdit data={data} handleDelete={handleDelete}/>} />
+          <Route path="/edit/:id" element={<Edit itemToEdit={itemToEdit} submitEdit={submitEdit}/>} />
+          <Route path="/toEdit" element={<SearchToEdit data={data} handleDelete={handleDelete} handleEdit={handleEdit}/>} />
           <Route path="/results" element={<Results searchResults={searchResults}/>} />
-          <Route path="/results/:id" element={<DietitianCard/>} />
+          {/* <Route path="/results/:id" element={<DietitianCard/>} /> */}
         </Routes>
       </BrowserRouter>
     </div>
