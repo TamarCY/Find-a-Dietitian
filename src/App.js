@@ -62,8 +62,8 @@ const filterDietitians = (data, dietExpertise, language, hmo, area) => {
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search data={data} filterDietitians={filterDietitians}/>} />
           <Route path="/add" element={<Add/>} />
-          <Route path="/edit" element={<Edit/>} />
-          <Route path="/toEdit" element={<SearchToEdit data={data}/>} />
+          {/* <Route path="/edit" element={<Edit/>} /> */}
+          <Route path="/toEdit" element={<SearchToEdit data={data} />} />
           <Route path="/results" element={<Results searchResults={searchResults}/>} />
           <Route path="/results/:id" element={<DietitianCard/>} />
         </Routes>
