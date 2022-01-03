@@ -12,8 +12,8 @@ const SearchToEdit = ({ data }) => {
     const renderCards = () => {
         if (results.length > 0) {
             return results.map((item) => {
-                return (<Link to={`/edit/${item.id}`} key={item.id}><DietitianCard
-                    data={item} isEditMode={true} /></Link>)
+                return (<div  key={item.id}><DietitianCard
+                    data={item} isEditMode={true} /></div>)
             })
         }
     }
