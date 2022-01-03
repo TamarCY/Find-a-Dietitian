@@ -6,12 +6,12 @@ import Form from "../../Components/Form/Form";
 
 
 
-const  Add = () =>{
+const  Add = ({submitForm}) =>{
     
 
     return (
         <div className="Add-container">
-            <Form/>              
+            <Form submitForm={submitForm}/>              
         </div>
     )
 }

@@ -13,7 +13,7 @@ import api from '../../api'
 
 
 
-export default function Form() {
+export default function Form({submitForm}) {
 
 const [name, setName] = useState("");
 const [phone, setPhone] = useState("");
@@ -60,24 +60,23 @@ const handleCityChange = (e) => {
   setCity(e.target.value)
 }
 
-const submitForm = () => {
-  try {
-  api.postItem({
-      "name": name,
-      "phone": phone,
-      "language": language,
-      "dietExpertise":dietExpertise,
-      "hmo": hmo,
-      "area": area,
-      "city": city
-    }
-  )
-  } catch(err){
-    console.error(err);
-  }
+// const submitForm = () => {
+//   try {
+//   api.postItem({
+//       "name": name,
+//       "phone": phone,
+//       "language": language,
+//       "dietExpertise":dietExpertise,
+//       "hmo": hmo,
+//       "area": area,
+//       "city": city
+//     }
+//   )
+//   } catch(err){
+//     console.error(err);
+//   }
 
-}
-// TODO: CHECK IF IT POSTS
+// }
 
   return (
     <Container>
@@ -128,7 +127,7 @@ const submitForm = () => {
 
     </Box>
     <Link to="/">
-    <Button variant="contained" color='success' onClick={submitForm}>שמירה</Button>
+    <Button variant="contained" color='success' onClick={()=>(submitForm(name, phone, language, dietExpertise, hmo, area, city))}>שמירה</Button>
     </Link>
 </Container>
   );

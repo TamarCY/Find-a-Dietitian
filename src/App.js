@@ -70,10 +70,24 @@ const handleDelete = async (id) => {
 
 }
   
-  //axios delete
-//clear input
-// get data
-// handle search
+const submitForm = async (name, phone, language, dietExpertise, hmo, area, city) => {
+  try {
+  const response = await api.postItem({
+      "name": name,
+      "phone": phone,
+      "language": language,
+      "dietExpertise":dietExpertise,
+      "hmo": hmo,
+      "area": area,
+      "city": city
+    }
+  )
+  getData()
+  } catch(err){
+    console.error(err);
+  }
+
+}
 
   return (
     <ThemeProvider theme={theme}>
@@ -82,7 +96,7 @@ const handleDelete = async (id) => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search data={data} filterDietitians={filterDietitians}/>} />
-          <Route path="/add" element={<Add/>} />
+          <Route path="/add" element={<Add submitForm={submitForm}/>} />
           {/* <Route path="/edit" element={<Edit/>} /> */}
           <Route path="/toEdit" element={<SearchToEdit data={data} handleDelete={handleDelete}/>} />
           <Route path="/results" element={<Results searchResults={searchResults}/>} />
