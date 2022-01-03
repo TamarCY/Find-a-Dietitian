@@ -53,6 +53,7 @@ export default function ClinicSelect(props) {
                         <MenuItem value={"דרום"}>דרום</MenuItem>
                         <MenuItem value={"ירושלים"}>ירושלים</MenuItem>
                         <MenuItem value={"שפלה"}>שפלה</MenuItem>
+                        <MenuItem value={"שרון"}>שרון</MenuItem>
                     </Select>
                 </FormControl>
             { renderCityInput()}

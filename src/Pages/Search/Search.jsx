@@ -7,36 +7,41 @@ import ClinicSelect from "../../Components/ClinicSelect/ClinicSelect";
 import { useState } from "react";
 import { Button } from "@mui/material";
 
-const Search = () => {
-const [dietExpertise, setDietExpertise] = useState([]);
-const [language, setLanguage] = useState([]);
-const [hmo, setHmo] = useState("");
-const [area, setArea] = useState("");
-const [dietitian, setDietitian] = useState({})
-// TODO: change to one state object and one function for all
+const Search = ({data}) => {
+    const [dietExpertise, setDietExpertise] = useState([]);
+    const [language, setLanguage] = useState([]);
+    const [hmo, setHmo] = useState("");
+    const [area, setArea] = useState("");
+    const [dietitian, setDietitian] = useState({})
+    // TODO: change to one state object? and one function for all
 
-const handleExpertiseChange = (event) => {
-  const {
-    target: { value },
-  } = event;
-  setDietExpertise(
-    // On autofill we get a stringified value.
-    typeof value === 'string' ? value.split(',') : value,
-  );
-};
+    const handleExpertiseChange = (e) => {
+        setDietExpertise(e.target.value)
+    };
 
     const handleLanguagesChange = (e) => {
         setLanguage(e.target.value);
-      };
-      
-      
-      const handleAreaChange = (e) => {
+    };
+
+
+    const handleAreaChange = (e) => {
         setArea(e.target.value)
-      }
-      
-      const handleHmoChange = (e) => {
+    }
+
+    const handleHmoChange = (e) => {
         setHmo(e.target.value)
-      }
+    }
+
+
+    const checkExpertice = (item, dataArray) => {
+       return  item.every( (element) => dataArray.includes(element))
+    }
+
+const filterDietitians = () => {
+    const result = data.filter((item)=>{
+        item.dietExpertise.includes()
+    })
+}
 
     return (
         <div className="Search-container">
@@ -55,7 +60,7 @@ const handleExpertiseChange = (event) => {
                 handleHmoChange={handleHmoChange}
                 handleAreaChange={handleAreaChange}
             />
-        <Button variant="contained" color='success' onClick={()=>{console.log(language);}}>חיפוש</Button>
+            <Button variant="contained" color='success' onClick={() => { console.log(language); }}>חיפוש</Button>
         </div>
     )
 }

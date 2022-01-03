@@ -8,7 +8,11 @@ import { Link } from "react-router-dom";
 const Home = () => {
     return (
         <div className="Home-container">
+        <div className="Home-main">
+            <div className="Home-logo-container">
             <img className="Home-logo" src={logo} alt="logo" />
+            </div>
+            <div className="Home-buttons">
             <Link className="Home-button" to="/search"> 
                חיפוש
             </Link>
@@ -18,7 +22,9 @@ const Home = () => {
             <Link className="Home-button" to="/toEdit"> 
                עריכה
             </Link>
+            </div>
             
+        </div>
         </div>
     )
 }
