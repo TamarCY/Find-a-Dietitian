@@ -25,6 +25,7 @@ function App() {
     getData()
   },[])
 
+  // TODO: think when and how to get data again after push new object to the api
 
 
   const checkExpertise = (item, dataArray) => {
@@ -61,7 +62,7 @@ const filterDietitians = (data, dietExpertise, language, hmo, area) => {
           <Route path="/add" element={<Add/>} />
           <Route path="/edit" element={<Add />} />
           <Route path="/toEdit" element={<SearchToEdit/>} />
-          <Route path="/results" element={<Results data={data}/>} />
+          <Route path="/results" element={<Results searchResults={searchResults}/>} />
           <Route path="/results/:id" element={<Search/>} />
         </Routes>
       </BrowserRouter>

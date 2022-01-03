@@ -6,6 +6,7 @@ import LanguageSelect from "../../Components/LanguageSelect/LanguageSelect";
 import ClinicSelect from "../../Components/ClinicSelect/ClinicSelect";
 import { useState } from "react";
 import { Button } from "@mui/material";
+import {Link} from "react-router-dom";
 
 const Search = (props) => {
     const [dietExpertise, setDietExpertise] = useState([]);
@@ -49,7 +50,7 @@ const Search = (props) => {
                 handleHmoChange={handleHmoChange}
                 handleAreaChange={handleAreaChange}
             />
-            <Button variant="contained" color='success' onClick={()=>props.filterDietitians(props.data ,dietExpertise, language, hmo, area)}>חיפוש</Button>
+            <Link to="/results"><Button variant="contained" color='success' onClick={()=>props.filterDietitians(props.data ,dietExpertise, language, hmo, area)}>חיפוש</Button></Link>
         </div>
     )
 }
