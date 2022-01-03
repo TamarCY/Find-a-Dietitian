@@ -18,8 +18,8 @@ function App() {
   const [data, setData] = useState({})
   const [searchResults, setSearchResults] = useState({})
 
-  useEffect(()=>{
-    const getData = async () => {
+
+const getData = async () => {
       try {
       const response = await api.getItems();
       setData(response);
@@ -27,7 +27,9 @@ function App() {
         console.error(err);
         // TODO: add error messsage to the user
     }
-    }
+  }
+
+  useEffect(()=>{
     getData()
   },[])
 

@@ -14,14 +14,14 @@ const SearchToEdit = ({ data, handleDelete }) => {
 
     useEffect(()=>{
     handleSearch()
-
-    },[])
+    },[data])
 
     const renderCards = () => {
         if (results.length > 0) {
             return results.map((item) => {
                 return (<div  key={item.id}><DietitianCard
-                    data={item} isEditMode={true} handleDelete={handleDelete}/></div>)
+                    data={item} isEditMode={true} 
+                    handleDelete={handleDelete}/></div>)
             })
         }
     }
@@ -29,6 +29,7 @@ const SearchToEdit = ({ data, handleDelete }) => {
     const handleSearch = () => {
         const filteredData = data.filter((item) => { return item.name.includes(input) })
         setResults(filteredData);
+        setInput("");
     }
 
     const handleChange = (e) => {
