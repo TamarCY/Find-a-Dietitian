@@ -7,7 +7,7 @@ import ClinicSelect from "../../Components/ClinicSelect/ClinicSelect";
 import { useState } from "react";
 import { Button } from "@mui/material";
 
-const Search = ({data}) => {
+const Search = ({ data }) => {
     const [dietExpertise, setDietExpertise] = useState([]);
     const [language, setLanguage] = useState([]);
     const [hmo, setHmo] = useState("");
@@ -33,15 +33,23 @@ const Search = ({data}) => {
     }
 
 
-    const checkExpertice = (item, dataArray) => {
-       return  item.every( (element) => dataArray.includes(element))
+    const checkExpertise = (item, dataArray) => {
+        return item.every((element) => dataArray.includes(element))
     }
 
-const filterDietitians = () => {
-    const result = data.filter((item)=>{
-        item.dietExpertise.includes()
-    })
-}
+    const checkLanguage = (item, dataArray) => {
+        return item.some((element)=>dataArray.includes(element))
+    }
+
+    const filterDietitians = () => {
+        const result = data.filter((item) => { return(
+            checkExpertise(dietExpertise ,item.dietExpertise) &&
+            checkLanguage(language, item.language) &&
+            hmo === item.hmo &&
+            area === item.area)
+        })
+        console.log(result);
+    }
 
     return (
         <div className="Search-container">
@@ -60,7 +68,7 @@ const filterDietitians = () => {
                 handleHmoChange={handleHmoChange}
                 handleAreaChange={handleAreaChange}
             />
-            <Button variant="contained" color='success' onClick={() => { console.log(language); }}>חיפוש</Button>
+            <Button variant="contained" color='success' onClick={filterDietitians}>חיפוש</Button>
         </div>
     )
 }

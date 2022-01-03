@@ -6,8 +6,11 @@ import Add from "./Pages/Add/Add"
 import Results from "./Pages/Results/Results"
 import SearchToEdit from "./Pages/SearchToEdit/SearchToEdit"
 import api from "./api"
+import {ThemeProvider, createTheme} from "@mui/material"
 
-
+const theme = createTheme({
+  direction: 'rtl',
+});
 
 function App() {
   const [data, setData] = useState({})
@@ -22,6 +25,7 @@ function App() {
   
 
   return (
+    <ThemeProvider theme={theme}>
     <div className="App">
       <BrowserRouter>
         <Routes>
@@ -35,6 +39,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
+    </ThemeProvider>
   );
 }
 
