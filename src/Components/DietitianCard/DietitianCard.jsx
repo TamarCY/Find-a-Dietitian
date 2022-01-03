@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import { IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import {Link} from 'react-router-dom';
 
 
 export default function DietitianCard({ data, isEditMode }) {
@@ -39,13 +40,16 @@ export default function DietitianCard({ data, isEditMode }) {
       </CardContent>
       {isEditMode &&
       <CardActions>
-        
+          
           <IconButton aria-label="delete">
             <DeleteIcon />
           </IconButton>
+          <Link to={`/edit/${data.id}`}>
           <IconButton aria-label="delete">
+
           <EditIcon />
         </IconButton>
+        </Link>
           
           
       </CardActions>}
