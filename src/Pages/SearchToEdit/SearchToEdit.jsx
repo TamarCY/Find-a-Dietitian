@@ -5,13 +5,10 @@ import InputSearch from "../../Components/InputSearch/InputSearch";
 import DietitianCard from "../../Components/DietitianCard/DietitianCard";
 import { Link } from "react-router-dom";
 
-//axios delete
-//clear input
-// get data
-// handle search
 
 
-const SearchToEdit = ({ data }) => {
+
+const SearchToEdit = ({ data, handleDelete }) => {
     const [input, setInput] = useState("");
     const [results, setResults] = useState([]);
 
@@ -24,7 +21,7 @@ const SearchToEdit = ({ data }) => {
         if (results.length > 0) {
             return results.map((item) => {
                 return (<div  key={item.id}><DietitianCard
-                    data={item} isEditMode={true} /></div>)
+                    data={item} isEditMode={true} handleDelete={handleDelete}/></div>)
             })
         }
     }

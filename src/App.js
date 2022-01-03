@@ -20,12 +20,17 @@ function App() {
 
   useEffect(()=>{
     const getData = async () => {
+      try {
       const response = await api.getItems();
-      console.log(response);
       setData(response);
+      } catch (err) {
+        console.error(err);
+        // TODO: add error messsage to the user
+    }
     }
     getData()
   },[])
+
 
   // TODO: think when and how to get data again after push new object to the api
 
@@ -52,7 +57,21 @@ const filterDietitians = (data, dietExpertise, language, hmo, area) => {
     console.log(result);
     setSearchResults(result)
 }
+
+const handleDelete = async (id) => {
+  try {
+  const response = await api.removeItem(id);
+  getData()
+  } catch (err){
+    console.error(err);
+  }
+
+}
   
+  //axios delete
+//clear input
+// get data
+// handle search
 
   return (
     <ThemeProvider theme={theme}>
@@ -63,7 +82,7 @@ const filterDietitians = (data, dietExpertise, language, hmo, area) => {
           <Route path="/search" element={<Search data={data} filterDietitians={filterDietitians}/>} />
           <Route path="/add" element={<Add/>} />
           {/* <Route path="/edit" element={<Edit/>} /> */}
-          <Route path="/toEdit" element={<SearchToEdit data={data} />} />
+          <Route path="/toEdit" element={<SearchToEdit data={data} handleDelete={handleDelete}/>} />
           <Route path="/results" element={<Results searchResults={searchResults}/>} />
           <Route path="/results/:id" element={<DietitianCard/>} />
         </Routes>

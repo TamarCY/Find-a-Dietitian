@@ -10,7 +10,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import {Link} from 'react-router-dom';
 
 
-export default function DietitianCard({ data, isEditMode }) {
+export default function DietitianCard({ data, isEditMode, handleDelete }) {
   if (!data) return <div></div>
   const renderLanguage = () => {
     return data.language.map((item) => { return <span key={item}>{item} </span> })
@@ -41,7 +41,7 @@ export default function DietitianCard({ data, isEditMode }) {
       {isEditMode &&
       <CardActions>
           
-          <IconButton aria-label="delete">
+          <IconButton aria-label="delete" onClick={()=>handleDelete(data.id)}>
             <DeleteIcon />
           </IconButton>
           <Link to={`/edit/${data.id}`}>
