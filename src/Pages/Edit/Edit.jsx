@@ -9,6 +9,7 @@ const  Edit = ({submitEdit, itemToEdit}) =>{
     
 
     return (
+        
         <div className="Add-container">
             <EditForm submitEdit={submitEdit} itemToEdit={itemToEdit}/>              
         </div>

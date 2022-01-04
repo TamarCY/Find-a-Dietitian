@@ -23,7 +23,7 @@ export default function ClinicSelect(props) {
 
     return (
         <Box>
-            <div>
+            <div className="Search-input">
                 <FormControl sx={{ m: 1, minWidth: 120 }}>
                     <InputLabel htmlFor="hmo">קופה</InputLabel>
                     <Select

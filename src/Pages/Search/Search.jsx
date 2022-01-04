@@ -6,7 +6,7 @@ import LanguageSelect from "../../Components/LanguageSelect/LanguageSelect";
 import ClinicSelect from "../../Components/ClinicSelect/ClinicSelect";
 import { useState } from "react";
 import { Button } from "@mui/material";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Search = (props) => {
     const [dietExpertise, setDietExpertise] = useState([]);
@@ -35,8 +35,11 @@ const Search = (props) => {
 
     return (
         <div className="Search-container">
-            <img className="Search-logo" src={logo} alt="logo" />
+            <div className="Search-logo search">
+            <img src={logo} alt="logo" />
+            </div>
             <MultipleSelectChip
+                className="search"
                 dietExpertise={dietExpertise}
                 handleExpertiseChange={handleExpertiseChange}
             />
@@ -45,12 +48,19 @@ const Search = (props) => {
                 handleLanguagesChange={handleLanguagesChange}
             />
             <ClinicSelect
+                className="search"
                 hmo={hmo}
                 area={area}
                 handleHmoChange={handleHmoChange}
                 handleAreaChange={handleAreaChange}
             />
-            <Link to="/results"><Button variant="contained" color='success' onClick={()=>props.filterDietitians(props.data ,dietExpertise, language, hmo, area)}>חיפוש</Button></Link>
+            <div className="Search-input">
+            <Link to="/results"><div className="Search-button"
+             variant="contained" color='success' 
+             onClick={() => props.filterDietitians(props.data, dietExpertise, language, hmo, area)}>חיפוש</div>
+             </Link>
+            </div>
+
         </div>
     )
 }

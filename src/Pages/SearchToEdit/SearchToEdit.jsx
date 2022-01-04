@@ -4,24 +4,25 @@ import logo from "../../Assets/Images/logo.png"
 import InputSearch from "../../Components/InputSearch/InputSearch";
 import DietitianCard from "../../Components/DietitianCard/DietitianCard";
 import { Link } from "react-router-dom";
+import { Box, Container } from "@mui/material";
 
 
 
 
-const SearchToEdit = ({ data, handleDelete, handleEdit}) => {
+const SearchToEdit = ({ data, handleDelete, handleEdit }) => {
     const [input, setInput] = useState("");
     const [results, setResults] = useState([]);
 
-    useEffect(()=>{
-    handleSearch()
-    },[data])
+    useEffect(() => {
+        handleSearch()
+    }, [data])
 
     const renderCards = () => {
         if (results.length > 0) {
             return results.map((item) => {
-                return (<div  key={item.id}><DietitianCard
-                    data={item} isEditMode={true} 
-                    handleDelete={handleDelete} handleEdit={handleEdit}/></div>)
+                return (<div key={item.id}><DietitianCard
+                    data={item} isEditMode={true}
+                    handleDelete={handleDelete} handleEdit={handleEdit} /></div>)
             })
         }
     }
@@ -39,11 +40,18 @@ const SearchToEdit = ({ data, handleDelete, handleEdit}) => {
 
 
     return (
+
         <div className="SearchToEdit-container">
-            <InputSearch handleSearch={handleSearch} handleChange={handleChange}
-                input={input}
-            />
-            {renderCards()}
+            <div className="SearchToEdit-main">
+                <div className="SearchToEdit-input">
+                    <InputSearch handleSearch={handleSearch} handleChange={handleChange}
+                        input={input}
+                    />
+                </div>
+                <div className="SearchToEdit-cards">
+                    {renderCards()}
+                </div>
+            </div>
         </div>
     )
 }

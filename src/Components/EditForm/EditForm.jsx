@@ -63,7 +63,7 @@ const handleCityChange = (e) => {
 
 
   return (
-    <Container>
+    <div className='EditForm-container'>
     <img className="Form-logo" src={logo} alt="logo"/>
     <Box
       component="form"
@@ -117,6 +117,6 @@ const handleCityChange = (e) => {
     <Link to="/toEdit">
         <Button variant="contained" color='success' >חזרה ללא שמירה</Button>
     </Link>
-</Container>
+</div>
   );
 }

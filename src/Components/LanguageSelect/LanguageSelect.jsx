@@ -43,7 +43,7 @@ export default function LanguageSelect(props) {
 //   };
 
   return (
-    <div>
+    <div className="Search-input">
       <FormControl sx={{ m: 1, width: 300 }}>
         <InputLabel id="demo-multiple-checkbox-label">שפות</InputLabel>
         <Select
