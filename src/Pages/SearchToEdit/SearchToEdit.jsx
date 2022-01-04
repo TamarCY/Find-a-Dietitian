@@ -43,6 +43,11 @@ const SearchToEdit = ({ data, handleDelete, handleEdit }) => {
 
         <div className="SearchToEdit-container">
             <div className="SearchToEdit-main">
+            <Link to="/" >
+                <div className="SearchToEdit-logo">
+                    <img src={logo} alt="logo" />
+                </div>
+            </Link>
                 <div className="SearchToEdit-input">
                     <InputSearch handleSearch={handleSearch} handleChange={handleChange}
                         input={input}

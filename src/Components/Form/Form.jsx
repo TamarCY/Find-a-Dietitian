@@ -63,8 +63,12 @@ export default function Form({ submitForm }) {
 
 
   return (
-    <Container>
+    <div className='Form-container'>
+      <Link to="/">
       <img className="Form-logo" src={logo} alt="logo" />
+      </Link>
+      <div className="Form-main">
+
       <Box
         component="form"
         sx={{
@@ -110,9 +114,12 @@ export default function Form({ submitForm }) {
 
 
       </Box>
+      <div className="Form-buttons">
       <Link to="/">
         <Button variant="contained" color='success' onClick={() => (submitForm(name, phone, language, dietExpertise, hmo, area, city))}>שמירה</Button>
       </Link>
-    </Container>
+      </div>
+      </div>
+    </div>
   );
 }

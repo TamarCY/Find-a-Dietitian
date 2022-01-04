@@ -35,9 +35,11 @@ const Search = (props) => {
 
     return (
         <div className="Search-container">
-            <div className="Search-logo search">
-            <img src={logo} alt="logo" />
-            </div>
+            <Link to="/" >
+                <div className="Search-logo search">
+                    <img src={logo} alt="logo" />
+                </div>
+            </Link>
             <MultipleSelectChip
                 className="search"
                 dietExpertise={dietExpertise}
@@ -55,10 +57,10 @@ const Search = (props) => {
                 handleAreaChange={handleAreaChange}
             />
             <div className="Search-input">
-            <Link to="/results"><div className="Search-button"
-             variant="contained" color='success' 
-             onClick={() => props.filterDietitians(props.data, dietExpertise, language, hmo, area)}>חיפוש</div>
-             </Link>
+                <Link to="/results"><div className="Search-button"
+                    variant="contained" color='success'
+                    onClick={() => props.filterDietitians(props.data, dietExpertise, language, hmo, area)}>חיפוש</div>
+                </Link>
             </div>
 
         </div>

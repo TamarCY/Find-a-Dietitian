@@ -1,29 +1,37 @@
-.SearchToEdit-container{
+.SearchToEdit-container {
+  display: flex;
+  flex-direction: column;
+  /* overflow: hidden; */
+}
+
+.SearchToEdit-input {
+  overflow: hidden;
+  margin: 10px;
+}
+.SearchToEdit-logo{
     display: flex;
-    flex-direction: column;
-    /* overflow: hidden; */
+    justify-content: center;
 }
 
-.SearchToEdit-input{
-    overflow: hidden;
-    margin: 10px;
-}
-
+.SearchToEdit-logo img{
+    width: 25%;
+    max-width: 500px;
+  }
 
 @media only screen and (min-width: 600px) {
-    .SearchToEdit-container {
+  .SearchToEdit-container {
     margin-top: 3%;
     align-items: center;
-    }
+  }
 
-    .SearchToEdit-input {
-        width: 600px;
-    }
+  .SearchToEdit-input {
+    width: 600px;
+  }
 
-    .SearchToEdit-main {
-        display: flex;
-    }
+  .SearchToEdit-logo img{
+    width: 40%;
+    max-width: 500px;
+  }
 
-    
-
+  
 }

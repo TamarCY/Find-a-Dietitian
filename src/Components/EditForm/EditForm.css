@@ -5,6 +5,10 @@
     padding: 10px;
 }
 
+.EditForm-logo {
+    display: none;
+    
+}
 
  .EditForm-container .Search-input {
      display: flex;
@@ -24,6 +28,11 @@
         max-width: 600px;
         margin: 0 auto;
         margin-top: 50px;
+    }
+    .EditForm-logo{
+        display: block;
+        height: 20rem;
+        margin: 0 auto;
     }
 
  }

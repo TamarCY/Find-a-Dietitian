@@ -8,7 +8,7 @@ export default function CustomizedInputBase({handleSearch, handleChange, input})
   return (
     <Paper
       component="form"
-      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', margin: "2px", maxWidth:"500px"}}
+      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', margin: "2px"}}
     >
       <InputBase
         sx={{ ml: 1, flex: 1 }}

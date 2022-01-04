@@ -1,5 +1,48 @@
 .Form-logo {
-    height: 3rem;
-    margin: 0 auto;
+    display: none;
+    
 }
+
+.Form-container{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 10px;
+}
+
+
+ .Form-container .Search-input {
+     display: flex;
+     flex-direction: column;
+ }
+
+
+ .Form-container .Form-buttons{
+     display: flex;
+     justify-content: center;
+     margin-top: 10px;
+
+ }
+
+ 
+
+ 
+ @media only screen and (min-width: 600px) {
+    .Form-container{
+        display:flex;
+        flex-direction: column;
+        max-width: 600px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    .Form-container .Form-buttons{
+        margin-top: 100px;
+    }
+    .Form-logo{
+        display: block;
+        height: 20rem;
+    margin: 0 auto;
+    }
+
+ }
 

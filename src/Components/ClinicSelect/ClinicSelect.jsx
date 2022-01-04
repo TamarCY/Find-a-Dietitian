@@ -10,7 +10,7 @@ export default function ClinicSelect(props) {
     const renderCityInput = () => {
         if (props.displayCity) {
             return (
-                <FormControl sx={{ m: 1, minWidth: 120 }}>
+                <FormControl sx={{ minWidth: 120 }}>
                     <TextField
                         id="city"
                         label="עיר"
