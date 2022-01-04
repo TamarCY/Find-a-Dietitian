@@ -24,10 +24,16 @@ const  Results = ({searchResults}) =>{
 
     if(!searchResults) return <div></div>;
     return (
-        
-        <Box className="Results-container" display="flex" flexDirection="column" alignItems="stretch" padding={1}>
+        <>
+        <Link to="/" >
+                <div className="SearchToEdit-logo">
+                    <img src={logo} alt="logo" />
+                </div>
+            </Link>
+        <div className="Results-container">
           {renderCards()}
-        </Box>
+        </div>
+        </>
     )
 }
 

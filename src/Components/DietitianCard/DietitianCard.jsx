@@ -20,7 +20,7 @@ export default function DietitianCard({ data, isEditMode, handleDelete, handleEd
   }
   console.log(data);
   return (
-    <Card sx={{ minWidth: 275, margin: 3}}>
+    <Card sx={{ minWidth: 275, margin: 1.2}}>
       <CardContent>
         <Typography variant="h5" component="div">
           {data.name}
