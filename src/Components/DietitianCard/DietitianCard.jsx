@@ -44,7 +44,7 @@ export default function DietitianCard({ data, isEditMode, handleDelete, handleEd
           <IconButton aria-label="delete" onClick={()=>handleDelete(data.id)}>
             <DeleteIcon />
           </IconButton>
-          <Link to={`/edit/${data.id}`}>
+          <Link to={`/edit`}>
           <IconButton aria-label="delete" onClick={()=>handleEdit(data)} >
           <EditIcon />
         </IconButton>

@@ -9,7 +9,6 @@ import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import ClinicSelect from '../ClinicSelect/ClinicSelect';
 import logo from '../../Assets/Images/logo.png';
 import './EditForm.css';
-import api from '../../api'
 import { useParams } from "react-router-dom";
 
 
@@ -25,7 +24,8 @@ const [city, setCity] = useState(itemToEdit.city);
 const [dietitian, setDietitian] = useState({})
 // TODO: change to one state object and one function for all
 
-const { id } = useParams();
+
+
 
 
 const handleExpertiseChange = (event) => {
@@ -33,9 +33,7 @@ const handleExpertiseChange = (event) => {
     target: { value },
   } = event;
   setDietExpertise(
-    // On autofill we get a stringified value.
-    typeof value === 'string' ? value.split(',') : value,
-  );
+   value);
 };
 
 const handleNameInput = (e)=>{
@@ -112,9 +110,9 @@ const handleCityChange = (e) => {
 
 
     </Box>
-    <Link to="/">
+    <Link to="/toEdit">
     <Button variant="contained" color='success' 
-    onClick={()=>(submitEdit(id,name, phone, language, dietExpertise, hmo, area, city))}>שמירה</Button>
+    onClick={()=>(submitEdit(itemToEdit.id,name, phone, language, dietExpertise, hmo, area, city))}>שמירה</Button>
     </Link>
     <Link to="/toEdit">
         <Button variant="contained" color='success' >חזרה ללא שמירה</Button>

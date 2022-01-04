@@ -34,6 +34,8 @@ const expertiseArray = [
     'הריון ופוריות',
     'צמחונות-טבעונות',
     'נון-דיאט',
+    `הפרעות אכילה`,
+     `אונקולוגיה`
   ];
 
 function getStyles(expertise, dietExpertise, theme) {

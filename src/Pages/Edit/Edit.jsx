@@ -1,8 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import "./Edit.css";
 import EditForm from "../../Components/EditForm/EditForm";
-// import { useParams } from "react-router-dom";
-// const { id } = useParams();
+
 
 
 
