@@ -1,0 +1,30 @@
+.EditForm-container{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 10px;
+}
+
+
+ .EditForm-container .Search-input {
+     display: flex;
+     flex-direction: column;
+ }
+
+
+ .EditForm-container .EditForm-buttons{
+     margin: 0 auto;
+ }
+
+ 
+ @media only screen and (min-width: 600px) {
+    .EditForm-container{
+        display:flex;
+        flex-direction: column;
+        max-width: 600px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+
+ }
+

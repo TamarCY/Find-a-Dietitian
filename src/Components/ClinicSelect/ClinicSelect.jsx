@@ -10,15 +10,16 @@ export default function ClinicSelect(props) {
     const renderCityInput = () => {
         if (props.displayCity) {
             return (
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <TextField
-                    id="city"
-                    label="עיר"
-                    defaultValue={props.city}
-                    onChange={props.handleCityChange}
-                />
-            </FormControl>
-        )}
+                <FormControl sx={{ m: 1, minWidth: 120 }}>
+                    <TextField
+                        id="city"
+                        label="עיר"
+                        defaultValue={props.city}
+                        onChange={props.handleCityChange}
+                    />
+                </FormControl>
+            )
+        }
     }
 
     return (
@@ -56,7 +57,7 @@ export default function ClinicSelect(props) {
                         <MenuItem value={"שרון"}>שרון</MenuItem>
                     </Select>
                 </FormControl>
-            { renderCityInput()}
+                {renderCityInput()}
 
 
             </div>

@@ -64,7 +64,7 @@ const handleCityChange = (e) => {
 
   return (
     <div className='EditForm-container'>
-    <img className="Form-logo" src={logo} alt="logo"/>
+    <div className="EditForm-main">
     <Box
       component="form"
       sx={{
@@ -110,13 +110,16 @@ const handleCityChange = (e) => {
 
 
     </Box>
+    <div className="EditForm-buttons">
     <Link to="/toEdit">
-    <Button variant="contained" color='success' 
+    <Button sx={{margin: 1}} variant="contained" color='success' 
     onClick={()=>(submitEdit(itemToEdit.id,name, phone, language, dietExpertise, hmo, area, city))}>שמירה</Button>
     </Link>
     <Link to="/toEdit">
-        <Button variant="contained" color='success' >חזרה ללא שמירה</Button>
+        <Button  sx={{margin: 1}} variant="contained" color='success' >חזרה ללא שמירה</Button>
     </Link>
+    </div>
+    </div>
 </div>
   );
 }
