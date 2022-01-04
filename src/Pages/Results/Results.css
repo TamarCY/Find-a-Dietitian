@@ -1,18 +1,76 @@
 .Results-card {
-    margin: 5px;
+  margin: 5px;
 }
 
-.Results-container{
+.Results-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Results-none {
+    margin-top: 30px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 5rem;
+}
+
+.Results-logo img{
+    width: 100px;
+  }
+
+.Results-none  img{
+    width: 200px;
+  }
+
+.Results-new a {
+    color: white;
+}
+
+  .Results-new {
+    width: 6rem;
+    height: 2rem;
+    border-radius: 10px;
+    margin: 6% 10%;
+    border: none;
+    background-color: var(--secondary);
+    color: #fff;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+
+.Results-logo {
+    display: flex;
+    justify-content: center;
 }
 
+@media only screen and (min-width: 600px) {
+  .Results-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+   
 
+  .Results-none {
+    font-size: 40px;
+  }
 
-@media only screen and (min-width: 600px){
-    .Results-container{
-        flex-direction: row;
-        justify-content: center;
-    }
+  .Results-logo img{
+    width: 300px;
+  }
+
+  .Results-new {
+    width: 10rem;
+    font-size: 1.5rem;
+    height: 4rem;
+
+  }
+
 }
