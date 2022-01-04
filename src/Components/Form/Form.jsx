@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Box from '@mui/material/Box';
 import { Button, Container } from '@mui/material';
 import TextField from '@mui/material/TextField';
@@ -13,88 +13,72 @@ import api from '../../api'
 
 
 
-export default function Form({submitForm}) {
+export default function Form({ submitForm }) {
 
-const [name, setName] = useState("");
-const [phone, setPhone] = useState("");
-const [dietExpertise, setDietExpertise] = useState([]);
-const [language, setLanguage] = useState([]);
-const [hmo, setHmo] = useState("");
-const [area, setArea] = useState("");
-const [city, setCity] = useState("");
-const [dietitian, setDietitian] = useState({})
-// TODO: change to one state object and one function for all
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [dietExpertise, setDietExpertise] = useState([]);
+  const [language, setLanguage] = useState([]);
+  const [hmo, setHmo] = useState("");
+  const [area, setArea] = useState("");
+  const [city, setCity] = useState("");
+  const [dietitian, setDietitian] = useState({})
+  // TODO: change to one state object and one function for all
 
-const handleExpertiseChange = (event) => {
-  const {
-    target: { value },
-  } = event;
-  setDietExpertise(
-    // On autofill we get a stringified value.
-    typeof value === 'string' ? value.split(',') : value,
-  );
-};
+  const handleExpertiseChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setDietExpertise(
+      // On autofill we get a stringified value.
+      typeof value === 'string' ? value.split(',') : value,
+    );
+  };
 
-const handleNameInput = (e)=>{
-  setName(e.target.value);
-};
+  const handleNameInput = (e) => {
+    setName(e.target.value);
+  };
 
-const handlePhoneInput = (e)=>{
-  setPhone(e.target.value);
-};
+  const handlePhoneInput = (e) => {
+    setPhone(e.target.value);
+  };
 
-const handleLanguagesChange = (e) => {
-  setLanguage(e.target.value);
-};
+  const handleLanguagesChange = (e) => {
+    setLanguage(e.target.value);
+  };
 
 
-const handleAreaChange = (e) => {
-  setArea(e.target.value)
-}
+  const handleAreaChange = (e) => {
+    setArea(e.target.value)
+  }
 
-const handleHmoChange = (e) => {
-  setHmo(e.target.value)
-}
+  const handleHmoChange = (e) => {
+    setHmo(e.target.value)
+  }
 
-const handleCityChange = (e) => {
-  setCity(e.target.value)
-}
+  const handleCityChange = (e) => {
+    setCity(e.target.value)
+  }
 
-// const submitForm = () => {
-//   try {
-//   api.postItem({
-//       "name": name,
-//       "phone": phone,
-//       "language": language,
-//       "dietExpertise":dietExpertise,
-//       "hmo": hmo,
-//       "area": area,
-//       "city": city
-//     }
-//   )
-//   } catch(err){
-//     console.error(err);
-//   }
 
-// }
 
   return (
     <Container>
-    <img className="Form-logo" src={logo} alt="logo"/>
-    <Box
-      component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
-      noValidate
-      autoComplete="off"
-    >
+      <img className="Form-logo" src={logo} alt="logo" />
+      <Box
+        component="form"
+        sx={{
+          '& .MuiTextField-root': { m: 1, width: '25ch' },
+        }}
+        noValidate
+        autoComplete="off"
+      >
         <TextField
           id="name"
           label="שם"
           value={name}
           onChange={handleNameInput}
-          
+
         />
         <TextField
           id="phone"
@@ -105,10 +89,10 @@ const handleCityChange = (e) => {
           value={phone}
           onChange={handlePhoneInput}
         />
-      
-        <MultipleSelectChip 
-        dietExpertise={dietExpertise}
-        handleExpertiseChange={handleExpertiseChange}
+
+        <MultipleSelectChip
+          dietExpertise={dietExpertise}
+          handleExpertiseChange={handleExpertiseChange}
         />
         <LanguageSelect
           language={language}
@@ -125,10 +109,10 @@ const handleCityChange = (e) => {
         />
 
 
-    </Box>
-    <Link to="/">
-    <Button variant="contained" color='success' onClick={()=>(submitForm(name, phone, language, dietExpertise, hmo, area, city))}>שמירה</Button>
-    </Link>
-</Container>
+      </Box>
+      <Link to="/">
+        <Button variant="contained" color='success' onClick={() => (submitForm(name, phone, language, dietExpertise, hmo, area, city))}>שמירה</Button>
+      </Link>
+    </Container>
   );
 }
