@@ -3,6 +3,7 @@ import "./Results.css";
 import logo from "../../Assets/Images/logo.png"
 import DietitianCard from "../../Components/DietitianCard/DietitianCard";
 import { Link } from "react-router-dom"
+import { textAlign } from "@mui/system";
 
 // TODO: deal with errors when page refreshed
 
@@ -31,17 +32,19 @@ const Results = ({ searchResults }) => {
     if (!searchResults) return <div></div>;
     return (
         <>
-            <Link to="/" >
-                <div className="Results-logo">
-                    <img src={logo} alt="logo" />
-                </div>
-            </Link>
-            <div className="Results-container">
+            <div className="Results-header">
+                <Link to="/" >
+                    <div className="Results-logo">
+                        <img src={logo} alt="logo" />
+                    </div>
+                </Link>
                 <div className="Results-new">
                     <Link to="/search">
                         חזרה לחיפוש
                     </Link>
                 </div>
+            </div>
+            <div className="Results-container">
                 {renderCards()}
             </div>
         </>
