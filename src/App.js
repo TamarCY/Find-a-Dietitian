@@ -20,7 +20,7 @@ function App() {
   const [data, setData] = useState({});
   const [searchResults, setSearchResults] = useState({});
   const [itemToEdit, setItemToEdit] = useState();
-  const [getDataError, setGetDataError] = useState(true);
+  const [getDataError, setGetDataError] = useState(false);
 
   const getData = async () => {
     try {
