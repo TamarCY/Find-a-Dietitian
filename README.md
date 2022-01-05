@@ -3,7 +3,7 @@
  <img width=200px height=200px src="https://i.ibb.co/Vj3p5Bv/logo-1.png alt="Project logo"></a>
 </p>
 
-<h3 align="center">find_a_dietitian</h3>
+<h3 align="center">Find a Dietitian</h3>
 
 ---
 
@@ -103,3 +103,5 @@ See also the list of [contributors](https://github.com/kylelobo/The-Documentatio
 - Hat tip to anyone whose code was used
 - Inspiration
 - References
+
+                                                  ![image](https://user-images.githubusercontent.com/71785633/148275256-d63b9895-ed03-42af-91de-4c2ac7291b2d.png)
