@@ -1,22 +1,22 @@
 .SearchToEdit-container {
   display: flex;
   flex-direction: column;
-  /* overflow: hidden; */
 }
 
 .SearchToEdit-input {
   overflow: hidden;
   margin: 10px;
 }
-.SearchToEdit-logo{
-    display: flex;
-    justify-content: center;
+
+.SearchToEdit-logo {
+  display: flex;
+  justify-content: center;
 }
 
-.SearchToEdit-logo img{
-    width: 25%;
-    max-width: 500px;
-  }
+.SearchToEdit-logo img {
+  width: 25%;
+  max-width: 500px;
+}
 
 @media only screen and (min-width: 600px) {
   .SearchToEdit-container {
@@ -28,10 +28,8 @@
     width: 600px;
   }
 
-  .SearchToEdit-logo img{
+  .SearchToEdit-logo img {
     width: 40%;
     max-width: 500px;
   }
-
-  
 }

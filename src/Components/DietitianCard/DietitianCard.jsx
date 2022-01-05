@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -7,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import { IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export default function DietitianCard({ data, isEditMode, handleDelete, handleEdit }) {
@@ -20,7 +19,7 @@ export default function DietitianCard({ data, isEditMode, handleDelete, handleEd
   }
   console.log(data);
   return (
-    <Card sx={{ minWidth: 275, margin: 1.2}}>
+    <Card sx={{ minWidth: 275, margin: 1.2 }}>
       <CardContent>
         <Typography variant="h5" component="div">
           {data.name}
@@ -39,19 +38,16 @@ export default function DietitianCard({ data, isEditMode, handleDelete, handleEd
         </Typography>
       </CardContent>
       {isEditMode &&
-      <CardActions>
-          
-          <IconButton aria-label="delete" onClick={()=>handleDelete(data.id)}>
+        <CardActions>
+          <IconButton aria-label="delete" onClick={() => handleDelete(data.id)}>
             <DeleteIcon />
           </IconButton>
           <Link to={`/edit`}>
-          <IconButton aria-label="delete" onClick={()=>handleEdit(data)} >
-          <EditIcon />
-        </IconButton>
-        </Link>
-          
-          
-      </CardActions>}
+            <IconButton aria-label="delete" onClick={() => handleEdit(data)} >
+              <EditIcon />
+            </IconButton>
+          </Link>
+        </CardActions>}
     </Card>
   );
 }

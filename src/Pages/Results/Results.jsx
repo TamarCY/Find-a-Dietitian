@@ -3,9 +3,7 @@ import "./Results.css";
 import logo from "../../Assets/Images/logo.png"
 import DietitianCard from "../../Components/DietitianCard/DietitianCard";
 import { Link } from "react-router-dom"
-import { textAlign } from "@mui/system";
 
-// TODO: deal with errors when page refreshed
 
 const Results = ({ searchResults }) => {
     if (searchResults.length === 0) {
@@ -26,7 +24,11 @@ const Results = ({ searchResults }) => {
         </div>
     }
     const renderCards = () => {
-        return searchResults.map((item) => { return (<div key={item.id} className="Results-card" ><DietitianCard data={item} isEditMode={false} /></div>) })
+        return searchResults.map((item) => {
+            return (<div key={item.id} className="Results-card" >
+                <DietitianCard data={item} isEditMode={false} />
+            </div>)
+        })
     }
 
     if (!searchResults) return <div></div>;
@@ -50,8 +52,6 @@ const Results = ({ searchResults }) => {
         </>
     )
 }
-
-// TODO: fix the code DRY
 
 
 export default Results;

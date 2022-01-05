@@ -1,32 +1,29 @@
-
 :root {
-    --primary: #8ac44f;
-    --secondary: #3e6913;
-    --secondary-dark: #32540f;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Varela Round", sans-serif;
-  }
-  
-  a {
-    text-decoration: none;
-  }
+  --primary: #8ac44f;
+  --secondary: #3e6913;
+  --secondary-dark: #32540f;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .App-error {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      font-size: 40px;
-      text-align: center;
-      margin: 0 30px;
-      
-  }
+body {
+  font-family: "Varela Round", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.App-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 40px;
+  text-align: center;
+  margin: 0 30px;
+}

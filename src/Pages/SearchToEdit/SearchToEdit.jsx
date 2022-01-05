@@ -6,9 +6,6 @@ import DietitianCard from "../../Components/DietitianCard/DietitianCard";
 import { Link } from "react-router-dom";
 
 
-
-
-
 const SearchToEdit = ({ data, handleDelete, handleEdit }) => {
     const [input, setInput] = useState("");
     const [results, setResults] = useState([]);
@@ -31,7 +28,7 @@ const SearchToEdit = ({ data, handleDelete, handleEdit }) => {
         const filteredData = data.filter((item) => { return item.name.includes(input) })
         setResults(filteredData);
         setInput("");
-        
+
     }
 
     const handleChange = (e) => {
@@ -44,9 +41,7 @@ const SearchToEdit = ({ data, handleDelete, handleEdit }) => {
     }
 
 
-
     return (
-
         <div className="SearchToEdit-container">
             <div className="SearchToEdit-main">
                 <Link to="/" >
@@ -56,7 +51,7 @@ const SearchToEdit = ({ data, handleDelete, handleEdit }) => {
                 </Link>
                 <div className="SearchToEdit-input">
                     <InputSearch handleSearch={handleSearch} handleChange={handleChange}
-                      handleSubmitToEdit={handleSubmitToEdit}  input={input}
+                        handleSubmitToEdit={handleSubmitToEdit} input={input}
                     />
                 </div>
                 <div className="SearchToEdit-cards">

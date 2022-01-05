@@ -2,15 +2,13 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import Box from '@mui/material/Box';
-import { Button, Container } from '@mui/material';
+import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import MultipleSelectChip from '../MultipleSelectCheckmarks/MultipleSelectChip';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import ClinicSelect from '../ClinicSelect/ClinicSelect';
 import logo from '../../Assets/Images/logo.png';
 import './Form.css';
-import api from '../../api'
-
 
 
 export default function Form({ submitForm }) {
@@ -22,17 +20,10 @@ export default function Form({ submitForm }) {
   const [hmo, setHmo] = useState("");
   const [area, setArea] = useState("");
   const [city, setCity] = useState("");
-  const [dietitian, setDietitian] = useState({})
-  // TODO: change to one state object and one function for all
 
   const handleExpertiseChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setDietExpertise(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
+    const { target: { value }, } = event;
+    setDietExpertise(value);
   };
 
   const handleNameInput = (e) => {
@@ -47,7 +38,6 @@ export default function Form({ submitForm }) {
     setLanguage(e.target.value);
   };
 
-
   const handleAreaChange = (e) => {
     setArea(e.target.value)
   }
@@ -61,64 +51,60 @@ export default function Form({ submitForm }) {
   }
 
 
-
   return (
     <div className='Form-container'>
       <Link to="/">
-      <img className="Form-logo" src={logo} alt="logo" />
+        <img className="Form-logo" src={logo} alt="logo" />
       </Link>
       <div className="Form-main">
+        <Box
+          component="form"
+          sx={{
+            '& .MuiTextField-root': { m: 1, width: '25ch' },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <TextField
+            id="name"
+            label="שם"
+            value={name}
+            onChange={handleNameInput}
 
-      <Box
-        component="form"
-        sx={{
-          '& .MuiTextField-root': { m: 1, width: '25ch' },
-        }}
-        noValidate
-        autoComplete="off"
-      >
-        <TextField
-          id="name"
-          label="שם"
-          value={name}
-          onChange={handleNameInput}
+          />
+          <TextField
+            id="phone"
+            type="tel"
+            label="טלפון"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
+            // TODO: fix the tel input type
+            value={phone}
+            onChange={handlePhoneInput}
+          />
 
-        />
-        <TextField
-          id="phone"
-          type="tel"
-          label="טלפון"
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
-          // TODO: fix the tel input type
-          value={phone}
-          onChange={handlePhoneInput}
-        />
-
-        <MultipleSelectChip
-          dietExpertise={dietExpertise}
-          handleExpertiseChange={handleExpertiseChange}
-        />
-        <LanguageSelect
-          language={language}
-          handleLanguagesChange={handleLanguagesChange}
-        />
-        <ClinicSelect
-          hmo={hmo}
-          area={area}
-          city={city}
-          displayCity={true}
-          handleHmoChange={handleHmoChange}
-          handleAreaChange={handleAreaChange}
-          handleCityChange={handleCityChange}
-        />
-
-
-      </Box>
-      <div className="Form-buttons">
-      <Link to="/">
-        <Button variant="contained" color='success' onClick={() => (submitForm(name, phone, language, dietExpertise, hmo, area, city))}>שמירה</Button>
-      </Link>
-      </div>
+          <MultipleSelectChip
+            dietExpertise={dietExpertise}
+            handleExpertiseChange={handleExpertiseChange}
+          />
+          <LanguageSelect
+            language={language}
+            handleLanguagesChange={handleLanguagesChange}
+          />
+          <ClinicSelect
+            hmo={hmo}
+            area={area}
+            city={city}
+            displayCity={true}
+            handleHmoChange={handleHmoChange}
+            handleAreaChange={handleAreaChange}
+            handleCityChange={handleCityChange}
+          />
+        </Box>
+        <div className="Form-buttons">
+          <Link to="/">
+            <Button variant="contained" color='success' onClick={() => (submitForm(name, phone, language, dietExpertise, hmo, area, city))}>שמירה</Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

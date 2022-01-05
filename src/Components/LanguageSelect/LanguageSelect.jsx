@@ -30,18 +30,6 @@ const languages = [
 ];
 
 export default function LanguageSelect(props) {
-//   const [language, setLanguage] = React.useState([]);
-
-//   const handleChange = (event) => {
-//     const {
-//       target: { value },
-//     } = event;
-//     setLanguage(
-//       // On autofill we get a stringified value.
-//       typeof value === 'string' ? value.split(',') : value,
-//     );
-//   };
-
   return (
     <div className="Search-input">
       <FormControl sx={{ m: 1, width: 300 }}>
@@ -53,7 +41,7 @@ export default function LanguageSelect(props) {
           value={props.language}
           onChange={props.handleLanguagesChange}
           input={<OutlinedInput label="Tag" />}
-          renderValue={(selected) => selected.join(', ')}
+          renderValue={(selected) => selected.join(',')}
           MenuProps={MenuProps}
         >
           {languages.map((item) => (

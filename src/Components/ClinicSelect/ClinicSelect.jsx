@@ -6,6 +6,7 @@ import { Box } from '@mui/material';
 import Select from '@mui/material/Select';
 import { TextField } from '@mui/material';
 
+
 export default function ClinicSelect(props) {
     const renderCityInput = () => {
         if (props.displayCity) {
@@ -58,8 +59,6 @@ export default function ClinicSelect(props) {
                     </Select>
                 </FormControl>
                 {renderCityInput()}
-
-
             </div>
         </Box>
     );

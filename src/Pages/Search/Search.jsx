@@ -12,7 +12,6 @@ const Search = (props) => {
     const [language, setLanguage] = useState([]);
     const [hmo, setHmo] = useState("");
     const [area, setArea] = useState("");
-    // TODO: change to one state object? and one function for all
 
     const handleExpertiseChange = (e) => {
         setDietExpertise(e.target.value)
@@ -39,7 +38,7 @@ const Search = (props) => {
                     <img src={logo} alt="logo" />
                 </div>
             </Link>
-            
+
             <MultipleSelectChip
                 className="search"
                 dietExpertise={dietExpertise}
@@ -59,9 +58,9 @@ const Search = (props) => {
             <div className="Search-input">
                 <Link to="/results">
                     <div className="Search-button"
-                    variant="contained" color='success'
-                    onClick={() => props.filterDietitians(
-                        props.data, dietExpertise, language, hmo, area)}>חיפוש</div>
+                        variant="contained" color='success'
+                        onClick={() => props.filterDietitians(
+                            props.data, dietExpertise, language, hmo, area)}>חיפוש</div>
                 </Link>
             </div>
 

@@ -1,6 +1,4 @@
 
-
-
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -50,15 +48,11 @@ function getStyles(expertise, dietExpertise, theme) {
 export default function MultipleSelectChip(props) {
   const theme = useTheme();
   const [dietExpertise, setDietExpertise] = React.useState([]);
-
   const handleChange = (event) => {
     const {
       target: { value },
     } = event;
-    setDietExpertise(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
+    setDietExpertise(value);
   };
 
   return (

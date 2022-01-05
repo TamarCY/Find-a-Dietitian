@@ -9,8 +9,7 @@ import Results from "./Pages/Results/Results";
 import SearchToEdit from "./Pages/SearchToEdit/SearchToEdit";
 import api from "./api";
 import Edit from "./Pages/Edit/Edit";
-import {CircularProgress} from "@mui/material"
-
+import { CircularProgress } from "@mui/material";
 
 const theme = createTheme({
   direction: "rtl"
@@ -131,9 +130,10 @@ function App() {
 
   return getDataError ? (
     <div className="App-error">
-      <CircularProgress color={"success"} size={80}/>
-    </div>) :
-     (<ThemeProvider theme={theme}>
+      <CircularProgress color={"success"} size={80} />
+    </div>
+  ) : (
+    <ThemeProvider theme={theme}>
       <div className="App">
         <BrowserRouter>
           <Routes>
