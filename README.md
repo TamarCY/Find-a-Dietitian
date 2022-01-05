@@ -5,12 +5,6 @@
 
 <h3 align="center">find_a_dietitian</h3>
 
-<div align="center">
-
-
-
-</div>
-
 ---
 
 <p align="center"> Few lines describing your project.
