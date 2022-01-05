@@ -1,26 +1,4 @@
-/* TODO: add to main css */
 
-:root {
-  --background: #fff;
-  --primary: #8ac44f;
-  --secondary: #3e6913;
-  --secondary-dark: #32540f;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  /* background-color: var(--background); */
-  font-family: "Varela Round", sans-serif;
-}
-
-a {
-  text-decoration: none;
-}
 
 .home-main {
   width: 100%;

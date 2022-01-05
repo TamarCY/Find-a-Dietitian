@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@mui/material";
+import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
+import "./App.css";
 import Home from "./Pages/Home/Home";
 import Search from "./Pages/Search/Search";
 import Add from "./Pages/Add/Add";
 import Results from "./Pages/Results/Results";
 import SearchToEdit from "./Pages/SearchToEdit/SearchToEdit";
 import api from "./api";
-import { ThemeProvider, createTheme } from "@mui/material";
 import Edit from "./Pages/Edit/Edit";
 
 const theme = createTheme({
@@ -17,6 +19,7 @@ function App() {
   const [data, setData] = useState({});
   const [searchResults, setSearchResults] = useState({});
   const [itemToEdit, setItemToEdit] = useState();
+  const [getDataError, setGetDataError] = useState(true);
 
   const getData = async () => {
     try {
@@ -24,7 +27,7 @@ function App() {
       setData(response);
     } catch (err) {
       console.error(err);
-      // TODO: add error message to the user
+      setGetDataError(true);
     }
   };
 
@@ -125,8 +128,12 @@ function App() {
     }
   };
 
-  return (
-    <ThemeProvider theme={theme}>
+  return getDataError ? (
+    <div className="App-error">
+     תקלה בטעינת הנתונים 
+      <SentimentVeryDissatisfiedIcon/>
+    </div>) :
+     (<ThemeProvider theme={theme}>
       <div className="App">
         <BrowserRouter>
           <Routes>
