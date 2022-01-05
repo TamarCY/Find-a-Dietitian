@@ -9,6 +9,8 @@ import Results from "./Pages/Results/Results";
 import SearchToEdit from "./Pages/SearchToEdit/SearchToEdit";
 import api from "./api";
 import Edit from "./Pages/Edit/Edit";
+import {CircularProgress} from "@mui/material"
+
 
 const theme = createTheme({
   direction: "rtl"
@@ -18,7 +20,7 @@ function App() {
   const [data, setData] = useState({});
   const [searchResults, setSearchResults] = useState({});
   const [itemToEdit, setItemToEdit] = useState();
-  const [getDataError, setGetDataError] = useState(false);
+  const [getDataError, setGetDataError] = useState(true);
 
   const getData = async () => {
     try {
@@ -129,7 +131,7 @@ function App() {
 
   return getDataError ? (
     <div className="App-error">
-      תקלה בטעינת הנתונים 😩 
+      <CircularProgress color={"success"} size={80}/>
     </div>) :
      (<ThemeProvider theme={theme}>
       <div className="App">
@@ -161,7 +163,6 @@ function App() {
               path="/results"
               element={<Results searchResults={searchResults} />}
             />
-            {/* <Route path="/results/:id" element={<DietitianCard/>} /> */}
           </Routes>
         </BrowserRouter>
       </div>

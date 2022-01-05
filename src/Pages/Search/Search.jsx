@@ -39,6 +39,7 @@ const Search = (props) => {
                     <img src={logo} alt="logo" />
                 </div>
             </Link>
+            
             <MultipleSelectChip
                 className="search"
                 dietExpertise={dietExpertise}
