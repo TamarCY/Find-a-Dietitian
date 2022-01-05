@@ -7,101 +7,57 @@
 
 ---
 
-<p align="center"> Few lines describing your project.
+<p align="center"> Web application that enable dietians to locate relevant colleagues and refer patient to them
     <br> 
 </p>
 
-## 📝 Table of Contents
+## 🏁 Link To The App <a name = "link"></a>
 
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
-
+https://find-a-dietitian.netlify.app/
+                                                 
+                                                 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
-
-## 🏁 Getting Started <a name = "getting_started"></a>
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## 🎈 Usage <a name="usage"></a>
-
-Add notes about how to use the system.
-
-## 🚀 Deployment <a name = "deployment"></a>
-
-Add additional notes about how to deploy this on a live system.
+Web application designed mobile-first, helps dietitians to refer patients to relevant colleagues.
+The users can add, edit, delete, and search dietitians.
+The search is built from:                               
+- Expertise - the results include all the selected expertise
+- Language - the results include at least one of the selected languages
+- Health provider - the result match the selected
+- Geographic region - the result matches the selected
+                             
+                             
 
 ## ⛏️ Built Using <a name = "built_using"></a>
+- React js
+- Material-ui 
+- Mock api
+ - Axios                                       
+ - React Router DOM
+                                         
+                                         
+![image](https://user-images.githubusercontent.com/71785633/148281898-44ebfff3-30e5-4741-b499-a6aee6c8f1a8.png)
+![image](https://user-images.githubusercontent.com/71785633/148282117-4fabd2cd-fece-4a39-87ec-da14b5c885b8.png)
+                                         ![image](https://user-images.githubusercontent.com/71785633/148282290-3d006d89-27ee-4cdf-b618-fdceb668b32d.png)
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
 
-## ✍️ Authors <a name = "authors"></a>
+                                
+                                   
+                                   
+                                         
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+                                 
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
 
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
+                                                             
+                                                  
+                                                  
+                                                                                                    
+        
+                                                                                                                         
+          
+                                                
+                                                  
+     
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
-
-         <img src="https://user-images.githubusercontent.com/71785633/148275256-d63b9895-ed03-42af-91de-4c2ac7291b2d.png"/>
+    
