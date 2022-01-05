@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://ibb.co/cgxXVTN" alt="Project logo"></a>
+ <img width=200px height=200px src="https://i.ibb.co/Vj3p5Bv/logo-1.png alt="Project logo"></a>
 </p>
 
 <h3 align="center">find_a_dietitian</h3>
