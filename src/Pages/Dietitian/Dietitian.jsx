@@ -9,7 +9,8 @@ const  Dietitian = () =>{
 
     return (
         <div className="Dietitian-container">
-          Dietitian
+          Dietitian page
+          Coming soon...
         </div>
     )
 }

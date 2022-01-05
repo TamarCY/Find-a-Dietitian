@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material";
-import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 import "./App.css";
 import Home from "./Pages/Home/Home";
 import Search from "./Pages/Search/Search";
@@ -19,7 +18,7 @@ function App() {
   const [data, setData] = useState({});
   const [searchResults, setSearchResults] = useState({});
   const [itemToEdit, setItemToEdit] = useState();
-  const [getDataError, setGetDataError] = useState(true);
+  const [getDataError, setGetDataError] = useState(false);
 
   const getData = async () => {
     try {
@@ -130,8 +129,7 @@ function App() {
 
   return getDataError ? (
     <div className="App-error">
-     תקלה בטעינת הנתונים 
-      <SentimentVeryDissatisfiedIcon/>
+      תקלה בטעינת הנתונים 😩 
     </div>) :
      (<ThemeProvider theme={theme}>
       <div className="App">
