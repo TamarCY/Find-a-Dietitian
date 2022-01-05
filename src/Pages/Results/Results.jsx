@@ -2,7 +2,6 @@ import React from "react";
 import "./Results.css";
 import logo from "../../Assets/Images/logo.png"
 import DietitianCard from "../../Components/DietitianCard/DietitianCard";
-import { Box, Container } from "@mui/material";
 import { Link } from "react-router-dom"
 
 // TODO: deal with errors when page refreshed
@@ -19,9 +18,9 @@ const Results = ({ searchResults }) => {
                 אין תוצאות מתאימות לחיפוש
             </div>
             <div className="Results-new">
-            <Link to="/search">
-                חיפוש חדש
-            </Link>
+                <Link to="/search">
+                    חיפוש חדש
+                </Link>
             </div>
         </div>
     }
@@ -38,6 +37,11 @@ const Results = ({ searchResults }) => {
                 </div>
             </Link>
             <div className="Results-container">
+                <div className="Results-new">
+                    <Link to="/search">
+                        חזרה לחיפוש
+                    </Link>
+                </div>
                 {renderCards()}
             </div>
         </>

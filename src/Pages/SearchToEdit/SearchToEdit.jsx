@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 
 
 
+
 const SearchToEdit = ({ data, handleDelete, handleEdit }) => {
     const [input, setInput] = useState("");
     const [results, setResults] = useState([]);

@@ -32,36 +32,34 @@ function App() {
     getData();
   }, []);
 
-  // TODO: think when and how to get data again after push new object to the api
-
   const checkExpertise = (item, dataArray) => {
-    return item? item.every((element) => dataArray.includes(element)): true;
+    return item ? item.every((element) => dataArray.includes(element)) : true;
   };
 
   const checkLanguage = (item, dataArray) => {
-    console.log("langue" , item);
-    return item.length === 0?
-    true:
-     item.some((element) => dataArray.includes(element));
+    console.log("langue", item);
+    return item.length === 0
+      ? true
+      : item.some((element) => dataArray.includes(element));
   };
 
   const checkInput = (item, dataItem) => {
-    return item? item === dataItem: true
-  }
+    return item ? item === dataItem : true;
+  };
 
   const filterDietitians = (data, dietExpertise, language, hmo, area) => {
-    const result = data.filter ((item) => {
+    const result = data.filter((item) => {
       return (
-        checkExpertise (dietExpertise, item.dietExpertise) &&
-        checkLanguage (language, item.language) &&
-        checkInput (hmo, item.hmo) &&
-        checkInput (area, item.area)
+        checkExpertise(dietExpertise, item.dietExpertise) &&
+        checkLanguage(language, item.language) &&
+        checkInput(hmo, item.hmo) &&
+        checkInput(area, item.area)
       );
     });
     if (result.length === 0) {
-      console.log ("no matches found");
+      console.log("no matches found");
     }
-    setSearchResults (result);
+    setSearchResults(result);
   };
 
   const handleDelete = async (id) => {
