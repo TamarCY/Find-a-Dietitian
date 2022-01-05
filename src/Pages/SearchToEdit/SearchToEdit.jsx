@@ -4,7 +4,6 @@ import logo from "../../Assets/Images/logo.png"
 import InputSearch from "../../Components/InputSearch/InputSearch";
 import DietitianCard from "../../Components/DietitianCard/DietitianCard";
 import { Link } from "react-router-dom";
-import { Box, Container } from "@mui/material";
 
 
 
@@ -31,10 +30,16 @@ const SearchToEdit = ({ data, handleDelete, handleEdit }) => {
         const filteredData = data.filter((item) => { return item.name.includes(input) })
         setResults(filteredData);
         setInput("");
+        
     }
 
     const handleChange = (e) => {
         setInput(e.target.value)
+    }
+
+    const handleSubmitToEdit = (e) => {
+        e.preventDefault();
+        handleSearch();
     }
 
 
@@ -43,14 +48,14 @@ const SearchToEdit = ({ data, handleDelete, handleEdit }) => {
 
         <div className="SearchToEdit-container">
             <div className="SearchToEdit-main">
-            <Link to="/" >
-                <div className="SearchToEdit-logo">
-                    <img src={logo} alt="logo" />
-                </div>
-            </Link>
+                <Link to="/" >
+                    <div className="SearchToEdit-logo">
+                        <img src={logo} alt="logo" />
+                    </div>
+                </Link>
                 <div className="SearchToEdit-input">
                     <InputSearch handleSearch={handleSearch} handleChange={handleChange}
-                        input={input}
+                      handleSubmitToEdit={handleSubmitToEdit}  input={input}
                     />
                 </div>
                 <div className="SearchToEdit-cards">

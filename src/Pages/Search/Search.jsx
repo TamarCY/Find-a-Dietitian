@@ -5,7 +5,6 @@ import MultipleSelectChip from "../../Components/MultipleSelectCheckmarks/Multip
 import LanguageSelect from "../../Components/LanguageSelect/LanguageSelect";
 import ClinicSelect from "../../Components/ClinicSelect/ClinicSelect";
 import { useState } from "react";
-import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const Search = (props) => {
@@ -57,9 +56,11 @@ const Search = (props) => {
                 handleAreaChange={handleAreaChange}
             />
             <div className="Search-input">
-                <Link to="/results"><div className="Search-button"
+                <Link to="/results">
+                    <div className="Search-button"
                     variant="contained" color='success'
-                    onClick={() => props.filterDietitians(props.data, dietExpertise, language, hmo, area)}>חיפוש</div>
+                    onClick={() => props.filterDietitians(
+                        props.data, dietExpertise, language, hmo, area)}>חיפוש</div>
                 </Link>
             </div>
 

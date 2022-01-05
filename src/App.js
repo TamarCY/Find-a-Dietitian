@@ -7,7 +7,6 @@ import Results from "./Pages/Results/Results";
 import SearchToEdit from "./Pages/SearchToEdit/SearchToEdit";
 import api from "./api";
 import { ThemeProvider, createTheme } from "@mui/material";
-import DietitianCard from "./Components/DietitianCard/DietitianCard";
 import Edit from "./Pages/Edit/Edit";
 
 const theme = createTheme({
@@ -25,7 +24,7 @@ function App() {
       setData(response);
     } catch (err) {
       console.error(err);
-      // TODO: add error messsage to the user
+      // TODO: add error message to the user
     }
   };
 
