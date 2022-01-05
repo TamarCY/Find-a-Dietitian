@@ -12,9 +12,8 @@
 }
 
 .Search-logo img{
-  height: 45%;
-  width: 70%;
-  max-width: 500px;
+  width: 15rem;
+  max-width: 400px;
 }
 
 .Search-input {
@@ -44,9 +43,8 @@
 
 @media only screen and (min-width: 600px) {
 
-
-
-
-
+  .Search-button {
+    width: 16rem;
+  }
 }
 
