@@ -104,4 +104,4 @@ See also the list of [contributors](https://github.com/kylelobo/The-Documentatio
 - Inspiration
 - References
 
-                                                  ![image](https://user-images.githubusercontent.com/71785633/148275256-d63b9895-ed03-42af-91de-4c2ac7291b2d.png)
+         <img src="https://user-images.githubusercontent.com/71785633/148275256-d63b9895-ed03-42af-91de-4c2ac7291b2d.png"/>
