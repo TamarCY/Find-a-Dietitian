@@ -1,5 +1,4 @@
 import React from "react";
-import "./Edit.css";
 import EditForm from "../../Components/EditForm/EditForm";
 
 
